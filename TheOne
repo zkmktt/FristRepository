@@ -9,7 +9,7 @@ public class UserController {
 
     @PostMapping("/user")
     public String SaveUserById(User user) {
-        System.out.println("添加用户 user:" + user);
+        System.out.println("addUser user:" + user);
         return "addUser";
     }
 
@@ -17,25 +17,25 @@ public class UserController {
     public String queryUser() {
         List<User> userList = userMapper.query();
 
-        System.out.println("用户 userList:" + userList);
+        System.out.println("User userList:" + userList);
         return "findUser：" + userList;
     }
 
     @GetMapping("/user/{id}")
     public String GetUserById(@PathVariable String id) {
-        System.out.println("根据Id获取用户 id:" + id);
+        System.out.println("getUserById id:" + id);
         return "getUserByID id:" + id;
     }
 
     @PutMapping("/user")
     public String UpdateUserById(User user) {
-        System.out.println("修改用户 user:" + user);
+        System.out.println("change user:" + user);
         return "changeUser";
     }
 
     @DeleteMapping("/user/{id}")
     public String DeleteUserById(@PathVariable String id) {
-        System.out.println("根据Id删除用户 id:" + id);
+        System.out.println("deleteUserById id:" + id);
         return "deleteUserById id:" + id;
     }
 }
